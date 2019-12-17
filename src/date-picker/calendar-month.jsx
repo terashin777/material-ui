@@ -22,10 +22,13 @@ const CalendarMonth = React.createClass({
 
   _getWeekElements() {
     let weekArray = DateTime.getWeekArray(this.props.displayDate, this.props.firstDayOfWeek);
+    let styles = {
+      display: 'flex',
+    };
 
     return weekArray.map((week, i) => {
       return (
-        <ClearFix key={i}>
+        <ClearFix key={i} style={styles}>
           {this._getDayElements(week, i)}
         </ClearFix>
       );
